@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invest in Shops | Ocamport</title>
+  <link rel="icon" type="image/jpg" href="images/ocamport.jpg" alt="Ocamport Logo">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .shops-invest-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(44,204,64,0.08);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .shops-invest-container h2 {
+      color: #2ecc40;
+      margin-bottom: 18px;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .shops-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 24px;
+    }
+    .shop-card {
+      background: #f6fbf4;
+      border: 1px solid #b7e2c1;
+      border-radius: 10px;
+      padding: 18px 16px 16px 16px;
+      width: 200px;
+      box-shadow: 0 2px 8px rgba(44,204,64,0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .shop-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+    }
+    .shop-card p {
+      margin: 0 0 4px 0;
+    }
+    .shop-card strong {
+      font-size: 1.08rem;
+    }
+    .shop-card .invest-btn {
+      margin-top: 10px;
+      background: #2ecc40;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: bold;
+      border: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .shop-card .invest-btn:hover {
+      background: #27ae60;
+      color: #eafbe7;
+    }
+    @media (max-width: 800px) {
+      .shops-list {
+        gap: 14px;
+      }
+      .shop-card {
+        width: 140px;
+        padding: 10px 4px;
+      }
+      .shop-card img {
+        width: 70px;
+        height: 70px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      <img src="images/ocamport.jpg" alt="Ocamport Logo" style="height: 2.55rem; vertical-align: middle; background: #fff; border-radius: 50%; margin-right: 10px;">
+      Ocamport
+    </h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">Categories</a>
+      <a href="#">Cart</a>
+      <a href="#">Contact</a>
+      <a href="invest.html" class="invest-btn" style="background: #fff; color: #2ecc40; border: 1.5px solid #2ecc40; font-weight: bold; margin-left: 16px; padding: 6px 16px; border-radius: 8px; transition: background 0.2s, color 0.2s;">Invest</a>
+    </nav>
+  </header>
+
+  <hr>
+
+  <div class="shops-invest-container">
+    <h2>Shops You Can Invest In</h2>
+    <div class="shops-list">
+      <div class="shop-card">
+        <img src="images/alden.jpeg" alt="Alden's Store">
+        <p><strong>Alden's Store</strong></p>
+        <p style="font-size: 0.98rem;">Specialty: Apparel</p>
+        <a href="https://forms.gle/7Qw9n6v8n4wQwQw9" target="_blank" class="invest-btn">Invest in this Shop</a>
+      </div>
+      <div class="shop-card">
+        <img src="images/dubai choc.jpeg" alt="Dubai Choc Shop">
+        <p><strong>Dubai Choc Shop</strong></p>
+        <p style="font-size: 0.98rem;">Specialty: Sweets</p>
+        <a href="https://forms.gle/7Qw9n6v8n4wQwQw9" target="_blank" class="invest-btn">Invest in this Shop</a>
+      </div>
+      <div class="shop-card">
+        <img src="images/master sprinkler.jpeg" alt="Sprinkler Supplies">
+        <p><strong>Sprinkler Supplies</strong></p>
+        <p style="font-size: 0.98rem;">Specialty: Home & Garden</p>
+        <a href="https://forms.gle/7Qw9n6v8n4wQwQw9" target="_blank" class="invest-btn">Invest in this Shop</a>
+      </div>
+      <div class="shop-card">
+        <img src="images/download.jpg" alt="Ocampo's Finds">
+        <p><strong>Ocampo's Finds</strong></p>
+        <p style="font-size: 0.98rem;">Specialty: Unique Items</p>
+        <a href="https://forms.gle/7Qw9n6v8n4wQwQw9" target="_blank" class="invest-btn">Invest in this Shop</a>
+      </div>
+      <div class="shop-card">
+        <img src="images/gold chain.jpeg" alt="Gold Chain Store">
+        <p><strong>Gold Chain Store</strong></p>
+        <p style="font-size: 0.98rem;">Specialty: Accessories</p>
+        <a href="https://forms.gle/7Qw9n6v8n4wQwQw9" target="_blank" class="invest-btn">Invest in this Shop</a>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <footer>
+    <p>&copy; 2025 Ocamport | For school project only</p>
+  </footer>
+</body>
+</html>
