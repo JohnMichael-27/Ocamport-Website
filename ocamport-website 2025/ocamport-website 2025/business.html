@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ocamport — Create Business</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Ocamport</h1>
+    <nav>
+      <a href="index.html">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="invest.html">Invest</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+
+  <section class="simple-section" id="business-section">
+    <h2>Create Your Business</h2>
+
+    <!-- Image Upload -->
+    <div id="business-image-container">
+      <img id="businessImagePreview" src="" alt="Business Preview">
+      <input id="businessImageInput" type="file" accept="image/*" onchange="previewBusinessImage(event)" style="display:none;">
+      <button id="uploadBusinessBtn" onclick="document.getElementById('businessImageInput').click()">Upload Business Image</button>
+    </div>
+
+    <!-- Business Details -->
+    <div class="business-inputs">
+      <label>Business Name</label>
+      <input id="businessName" type="text" placeholder="Enter your business name">
+
+      <label>Category</label>
+      <input id="businessCategory" type="text" placeholder="e.g. Food, Accessories, Clothing">
+
+      <label>Description</label>
+      <textarea id="businessDesc" rows="4" placeholder="Describe your business"></textarea>
+    </div>
+
+    <div class="business-actions">
+      <button onclick="saveBusiness()">Save Business</button>
+      <a href="shop-profile.html"><button>View Shop Profile</button></a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Ocamport — School Project
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

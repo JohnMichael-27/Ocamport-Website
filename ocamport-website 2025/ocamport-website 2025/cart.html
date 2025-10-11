@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Ocamport — Invest</title>
+  <title>Ocamport — Cart</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,17 +15,22 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="cart.html">Cart</a>
-      <a href="invest.html" class="active">Invest</a>
+      <a href="invest.html">Invest</a>
       <a href="profile.html" class="cta">Profile</a>
     </nav>
   </header>
 
   <main>
     <section class="simple-section">
-      <h2>Investment Opportunities</h2>
+      <h2>Your Cart</h2>
+      <div id="cartArea">
+        <!-- cart items -->
+      </div>
 
-      <div id="investArea" class="biz-grid">
-        <!-- JS will fill business cards here -->
+      <div class="cart-actions">
+        <button onclick="clearCart()">Clear Cart</button>
+        <button onclick="checkout()">Checkout</button>
+        <a href="index.html"><button>Continue Shopping</button></a>
       </div>
     </section>
   </main>

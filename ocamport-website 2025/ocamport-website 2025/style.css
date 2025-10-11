@@ -1,254 +1,745 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ===== Ocamport ===== */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f6fbf4;
-    color: #234c2e;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+  font-family: Arial, "Segoe UI", sans-serif;
+  background: #f6fbf4;
+  color: #213622;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
 }
 
+/* ----- HEADER ----- */
 header {
-    width: 100%;
-    background: #2ecc40;
-    color: #fff;
-    padding: 24px 0 12px 0;
-    box-shadow: 0 2px 8px rgba(44,204,64,0.06);
-    text-align: center;
-    border-radius: 0 0 18px 18px;
+  background: #2ecc40;
+  color: #fff;
+  padding: 16px 12px;
+  border-bottom: 3px solid #27ae60;
 }
-
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #fff;
+  object-fit: cover;
+}
 header h1 {
-    margin: 0;
-    font-size: 2.2rem;
-    letter-spacing: 2px;
-    font-weight: bold;
-    color: #fff;
-    background: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-}
-
-header h1 img {
-    height: 2.55rem;
-    width: 2.55rem;
-    background: #fff;
-    border-radius: 50%;
-    margin-right: 10px;
-    object-fit: cover;
-    border: 2px solid #eafbe7;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 nav {
-    margin-top: 10px;
+  margin-top: 8px;
 }
-
 nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 14px;
-    font-weight: 500;
-    font-size: 1.08rem;
-    transition: color 0.2s, background 0.2s;
-    padding: 4px 10px;
-    border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 8px;
+  padding: 6px 10px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.2s;
 }
-
 nav a:hover {
-    background: #27ae60;
-    color: #eafbe7;
+  background: rgba(255, 255, 255, 0.2);
+}
+.cta {
+  background: #fff;
+  color: #2ecc40;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 700;
 }
 
-section {
-    width: 100%;
-    max-width: 900px;
-    margin: 32px auto 0 auto;
-    background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 2px 12px rgba(44,204,64,0.04);
-    padding: 32px 24px;
-    text-align: center;
+/* ----- MAIN ----- */
+main {
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 14px;
+  flex: 1 0 auto;
 }
 
-form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 0;
+/* ----- SIMPLER SECTIONS (NO BOX, CLEAN) ----- */
+.simple-section {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 25px 0;
+  margin-bottom: 10px;
 }
 
-input[type="text"] {
-    padding: 10px 14px;
-    border: 1px solid #b7e2c1;
-    border-radius: 4px;
-    font-size: 1rem;
-    width: 320px;
-    transition: border 0.2s;
-    background: #f6fbf4;
-    color: #234c2e;
+.simple-section h2 {
+  color: #2ecc40;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
 }
 
-input[type="text"]:focus {
-    border: 1.5px solid #2ecc40;
-    outline: none;
+
+/* ----- SEARCH BAR ----- */
+.search {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  padding: 14px;
+  margin-bottom: 18px;
+}
+.search input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #b7e2c1;
+  width: 60%;
+}
+.search button {
+  background: #2ecc40;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.search button:hover {
+  background: #27ae60;
 }
 
+/* ----- PRODUCT CARDS (Top Sellers section) ----- */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  position: relative;
+  padding-top: 50px; /* space for title */
+}
+
+/* Style the Top Sellers title */
+.cards h2 {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.4rem;
+  color: #2ecc40;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card {
+  width: 170px;
+  background: #fff;
+  border: 1px solid #dcefd9;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+.card-body {
+  padding: 10px;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-body strong {
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+}
+.price {
+  color: #2ecc40;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.card button {
+  background: #2ecc40;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.card button:hover {
+  background: #27ae60;
+}
+
+/* ----- CATEGORY CHIPS ----- */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.chips span {
+  background: #f0f9ef;
+  color: #2ecc40;
+  padding: 6px 10px;
+  border-radius: 20px;
+  border: 1px solid #dcefd9;
+  font-weight: 600;
+}
+
+/* ----- CART PAGE ----- */
+#cartArea {
+  margin-top: 10px;
+}
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px;
+  border-bottom: 1px solid #eafbe7;
+}
+.cart-thumb {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.cart-item strong {
+  display: block;
+}
+.cart-actions {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.cart-actions button {
+  background: #2ecc40;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.cart-actions button:hover {
+  background: #27ae60;
+}
+
+/* ----- PROFILE & BUSINESS FORMS ----- */
+input, textarea {
+  display: block;
+  width: 80%;
+  margin: 8px auto;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #cceacb;
+  background: #f6fbf4;
+  text-align: center;
+}
+textarea { resize: none; }
 button {
-    background: #2ecc40;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 18px;
-    font-size: 1rem;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background 0.2s;
+  background: #2ecc40;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 5px;
 }
-
 button:hover {
-    background: #27ae60;
+  background: #27ae60;
 }
 
-section > div {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    margin-top: 24px;
-    flex-wrap: wrap;
+/* Center forms in white box */
+main section.simple-section {
+  text-align: center;
+  max-width: 480px;
+  margin: 0 auto 25px auto;
+}
+/* ----- PROFILE PICTURE STYLE ----- */
+#profile-picture-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 14px;
 }
 
-section > div > div {
-    background: #f6fbf4;
-    border: 1px solid #b7e2c1;
-    border-radius: 10px;
-    padding: 18px 16px 16px 16px;
-    width: 200px;
-    box-shadow: 0 2px 8px rgba(44,204,64,0.06);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: box-shadow 0.2s, transform 0.2s;
+#profilePreview {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2ecc40;
+  margin-bottom: 10px;
+  display: none;
+  background: #eafbe7;
 }
 
-section > div > div:hover {
-    box-shadow: 0 4px 16px rgba(44,204,64,0.13);
-    transform: translateY(-4px) scale(1.03);
+#imageInput {
+  text-align: center;
+  color: #2ecc40;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-section > div > div img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    background: #fff;
+/* ----- BUSINESS & INVESTMENT CARDS ----- */
+.biz-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.biz-card {
+  width: 200px;
+  background: #fff;
+  border: 1px solid #e6f6ea;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.biz-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+.biz-card h4 {
+  color: #2ecc40;
+  margin-bottom: 6px;
+}
+.biz-card button {
+  margin-top: 6px;
+  padding: 6px 10px;
 }
 
-section > div > div p {
-    margin: 6px 0 0 0;
-    font-size: 1rem;
+/* ----- CONTRACT BOX ----- */
+.contract-box {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-section > div > div p strong {
-    font-size: 1.08rem;
-    color: #2ecc40;
+.contract-inner {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 480px;
+  text-align: center;
+  position: relative;
 }
-
-section > div > div button {
-    margin-top: 10px;
-    width: 100%;
+.contract-inner h3 {
+  color: #2ecc40;
+  margin-bottom: 10px;
 }
-
-h2 {
-    color: #2ecc40;
-    font-size: 1.4rem;
-    margin-bottom: 18px;
-    background: none;
-    font-weight: 600;
-    letter-spacing: 1px;
+.contract-inner .close {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
+.hidden { display: none; }
 
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    flex-wrap: wrap;
-}
-
-ul li a {
-    color: #2ecc40;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.08rem;
-    padding: 7px 18px;
-    border-radius: 8px;
-    background: #f6fbf4;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 1px 4px rgba(44,204,64,0.04);
-    border: 1px solid #eafbe7;
-    display: block;
-}
-
-ul li a:hover {
-    background: #eafbe7;
-    color: #234c2e;
-    box-shadow: 0 2px 8px rgba(44,204,64,0.10);
-}
-
-hr {
-    border: none;
-    border-top: 1.5px solid #eafbe7;
-    margin: 0;
-    width: 100%;
-}
-
+/* ----- FOOTER (CLEAN + BORDERLESS) ----- */
 footer {
-    width: 100%;
-    text-align: center;
-    padding: 18px 0 12px 0;
-    background: #eafbe7;
-    color: #2ecc40;
-    font-size: 1rem;
-    margin-top: 30px;
-    border-top: 1.5px solid #b7e2c1;
-    border-radius: 18px 18px 0 0;
+  margin-top: auto;
+  background: transparent;   /* no background color */
+  border: none !important;   /* force-remove any borders */
+  padding: 18px 10px;
+  color: #2ecc40;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-align: center;
+  opacity: 0.9;
+  letter-spacing: 0.3px;
+  box-shadow: none !important;
 }
 
-@media (max-width: 800px) {
-    section {
-        max-width: 98vw;
-        padding: 18px 4vw;
-    }
-    section > div {
-        gap: 18px;
-    }
-    section > div > div {
-        width: 150px;
-        padding: 12px 6px;
-    }
-    section > div > div img {
-        width: 90px;
-        height: 90px;
-    }
-    ul {
-        gap: 10px;
-    }
+footer:hover {
+  opacity: 1;
 }
 
-.main {
-    width: 100%;
-    background-position: center; 
-    background-size: cover;
-    height: 109vh;
+
+/* ----- RESPONSIVE ----- */
+@media (max-width: 700px) {
+  .card { width: 45%; }
+  .biz-card { width: 45%; }
+  input, textarea { width: 95%; }
+}
+
+/* ----- PROFILE PAGE LAYOUT ----- */
+
+/* ----- CREATE BUSINESS PAGE ----- */
+#business-section {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 14px;
+  padding: 25px 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+#business-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+#businessImagePreview {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 3px solid #2ecc40;
+  background: #eafbe7;
+  margin-bottom: 10px;
+  display: none;
+}
+
+/* Upload Button */
+#uploadBusinessBtn {
+  background: #2ecc40;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+#uploadBusinessBtn:hover {
+  background: #27ae60;
+}
+
+.business-inputs label {
+  display: block;
+  text-align: left;
+  font-weight: 600;
+  margin: 8px 0 4px;
+  color: #2ecc40;
+}
+
+.business-inputs input,
+.business-inputs textarea {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.business-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+#profile-section {
+  text-align: center;
+  max-width: 500px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 14px;
+  padding: 25px 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+#profile-picture-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+#profilePreview {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2ecc40;
+  margin-bottom: 10px;
+  display: none;
+  background: #eafbe7;
+}
+
+#imageInput {
+  color: #2ecc40;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ----- SHOP PROFILE PAGE ----- */
+.shop-profile {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.shop-banner img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: none;
+  margin-bottom: 10px;
+}
+
+.shop-logo img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2ecc40;
+  background: #eafbe7;
+  display: none;
+}
+
+.shop-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.shop-details {
+  width: 100%;
+  max-width: 400px;
+}
+
+.shop-details input, .shop-details textarea {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+#uploadBtn {
+  display: block;
+  margin: 10px auto;
+  background: #2ecc40;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+#uploadBtn:hover {
+  background: #27ae60;
+}
+
+/* ----- CONTRACT PAGE ----- */
+#contractSection {
+  max-width: 20px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.contract-box h3 {
+  color: #2ecc40;
+  margin-bottom: 7px;
+}
+
+.contract-box p {
+  line-height: 1;
+  color: #444;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.contract-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.contract-actions button {
+  background: #2ecc40;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.contract-actions button:hover {
+  background: #27ae60;
+}
+
+.contract-actions .secondary {
+  background: #ccc;
+  color: black;
+}
+
+.contract-actions .secondary:hover {
+  background: #bbb;
+}
+
+/* -----  ----- */
+.contract-scroll {
+  max-height: 250px;
+  overflow-y: auto;
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: justify;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.contract-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.contract-scroll::-webkit-scrollbar-thumb {
+  background: #2ecc40;
+  border-radius: 4px;
+}
+
+.contract-extra {
+  margin: 10px 0 20px;
+  padding: 14px;
+  border-left: 4px solid #2ecc40;
+  background: #f9fff9;
+  text-align: left;
+}
+
+.contract-extra h4 {
+  color: #2ecc40;
+  margin-bottom: 6px;
+}
+
+.contract-extra ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #444;
+  line-height: 1.5;
+}
+
+
+
+/* CONTRACT PAGE LAYOUT */
+body {
+  background: #e9f5ec; /* light greenish-gray backdrop */
+}
+
+#contractSection {
+  background: white;
+  border-radius: 14px;
+  padding: 30px 25px;
+  max-width: 750px;
+  margin: 50px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: match-parent;
+}
+
+#contractSection h2 {
+  color: #2ecc40;
+  margin-bottom: 18px;
+}
+
+.contract-box {
+  text-align: left;
+}
+
+.contract-box h3 {
+  color: #2ecc40;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* ----- SHOP PRODUCT GRID ----- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 15px;
+  justify-items: center;
+  margin-top: 15px;
+}
+
+.product-card {
+  width: 160px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.15s;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 6px;
+}
+
+.product-card h4 {
+  margin: 5px 0 3px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.product-card p {
+  color: #2ecc40;
+  font-weight: 600;
+  margin: 0;
+}
+
+.shop-note {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
 }

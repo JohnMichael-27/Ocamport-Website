@@ -1,299 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ocamport | Online Shopping</title>
-  <link rel="icon" type="image/jpg" href="images/ocamport.jpg" alt="Ocamport Logo">
+  <link rel="icon" href="images/ocamport.jpg" type="image/jpg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ocamport — Home</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      background: #f6fbf4;
-      color: #234c2e;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      min-height: 100vh;
-    }
-    header {
-      background: #2ecc40;
-      color: #fff;
-      padding: 24px 0 12px 0;
-      box-shadow: 0 2px 8px rgba(44,204,64,0.06);
-      text-align: center;
-      border-radius: 0 0 18px 18px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
-      letter-spacing: 2px;
-      font-weight: bold;
-      color: #fff;
-      background: none;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 14px;
-      font-weight: 500;
-      font-size: 1.08rem;
-      transition: color 0.2s;
-      padding: 4px 10px;
-      border-radius: 6px;
-    }
-    nav a:hover {
-      background: #27ae60;
-      color: #eafbe7;
-    }
-    section {
-      width: 100%;
-      max-width: 900px;
-      margin: 32px auto 0 auto;
-      background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 2px 12px rgba(44,204,64,0.04);
-      padding: 32px 24px;
-      text-align: center;
-    }
-    form {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 0;
-    }
-    input[type="text"] {
-      padding: 10px 14px;
-      border: 1px solid #b7e2c1;
-      border-radius: 4px;
-      font-size: 1rem;
-      width: 320px;
-      transition: border 0.2s;
-      background: #f6fbf4;
-      color: #234c2e;
-    }
-    input[type="text"]:focus {
-      border: 1.5px solid #2ecc40;
-      outline: none;
-    }
-    button {
-      background: #2ecc40;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      padding: 10px 18px;
-      font-size: 1rem;
-      cursor: pointer;
-      font-weight: 500;
-      transition: background 0.2s;
-    }
-    button:hover {
-      background: #27ae60;
-    }
-    section > div {
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      margin-top: 24px;
-      flex-wrap: wrap;
-    }
-    section > div > div {
-      background: #f6fbf4;
-      border: 1px solid #b7e2c1;
-      border-radius: 10px;
-      padding: 18px 16px 16px 16px;
-      width: 200px;
-      box-shadow: 0 2px 8px rgba(44,204,64,0.06);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    section > div > div:hover {
-      box-shadow: 0 4px 16px rgba(44,204,64,0.13);
-      transform: translateY(-4px) scale(1.03);
-    }
-    section > div > div img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      background: #fff;
-    }
-    section > div > div p {
-      margin: 6px 0 0 0;
-      font-size: 1rem;
-    }
-    section > div > div p strong {
-      font-size: 1.08rem;
-      color: #2ecc40;
-    }
-    section > div > div button {
-      margin-top: 10px;
-      width: 100%;
-    }
-    h2 {
-      color: #2ecc40;
-      font-size: 1.4rem;
-      margin-bottom: 18px;
-      background: none;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-    ul li a {
-      color: #2ecc40;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.08rem;
-      padding: 7px 18px;
-      border-radius: 8px;
-      background: #f6fbf4;
-      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-      box-shadow: 0 1px 4px rgba(44,204,64,0.04);
-      border: 1px solid #eafbe7;
-      display: block;
-    }
-    ul li a:hover {
-      background: #eafbe7;
-      color: #234c2e;
-      box-shadow: 0 2px 8px rgba(44,204,64,0.10);
-    }
-    hr {
-      border: none;
-      border-top: 1.5px solid #eafbe7;
-      margin: 0;
-      width: 100%;
-    }
-    footer {
-      width: 100%;
-      text-align: center;
-      padding: 18px 0 12px 0;
-      background: #eafbe7;
-      color: #2ecc40;
-      font-size: 1rem;
-      margin-top: 30px;
-      border-top: 1.5px solid #b7e2c1;
-      border-radius: 18px 18px 0 0;
-    }
-    @media (max-width: 800px) {
-      section {
-        max-width: 98vw;
-        padding: 18px 4vw;
-      }
-      section > div {
-        gap: 18px;
-      }
-      section > div > div {
-        width: 150px;
-        padding: 12px 6px;
-      }
-      section > div > div img {
-        width: 90px;
-        height: 90px;
-      }
-      ul {
-        gap: 10px;
-      }
-    }
-  </style>
 </head>
 <body>
-  <!-- HEADER -->
   <header>
-    <h1>
-      <img src="images/ocamport.jpg" alt="Ocamport Logo" style="height: 2.55rem; vertical-align: middle; background: #fff; border-radius: 50%; margin-right: 10px;">
-      Ocamport
-    </h1>
+    <div class="header-inner">
+      <img src="images/ocamport.jpg" alt="logo" class="logo">
+      <h1>Ocamport</h1>
+    </div>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Shop</a>
-      <a href="#">Categories</a>
-      <a href="#">Cart</a>
-      <a href="#">Contact</a>
-      <a href="invest.html" target="_self" style="background: #fff; color: #2ecc40; border: 1.5px solid #2ecc40; font-weight: bold; margin-left: 16px; padding: 6px 16px; border-radius: 8px; transition: background 0.2s, color 0.2s;">Invest</a>
+      <a href="index.html">Home</a>
+      <a href="index.html#shop">Shop</a>
+      <a href="index.html#categories">Categories</a>
+      <a href="cart.html">Cart</a>
+      <a href="invest.html">Invest</a>
+      <a href="profile.html" class="cta">Profile</a>
     </nav>
   </header>
 
-  <hr>
+  <main>
+    <section class="search">
+      <input id="searchInput" type="text" placeholder="Search products...">
+      <button onclick="simpleSearch()">Search</button>
+    </section>
 
-  <!-- SEARCH BAR -->
-  <section>
-    <form>
-      <input type="text" placeholder="Search products..." size="40">
-      <button type="submit">Search</button>
-    </form>
-  </section>
+    <section id="shop" class="cards">
+      <h2>Top Sellers</h2>
 
-  <hr>
-
-  <!-- top sellers -->
-  <section>
-    <h2>Top Sellers</h2>
-    <div>
-      <div>
-        <img src="images/alden.jpeg" alt="Product 1">
-        <p style="color: red;">🔥Best Selling</p>
-        <p><strong>Alden Richards</strong></p>
-        <p>₱199</p>
-        <button>Add to Cart</button>
+      <!-- product blocks -->
+      <div class="card">
+        <img src="images/alden.jpeg" alt="Alden">
+        <div class="card-body">
+          <strong>Alden Richards</strong>
+          <div class="price">₱199</div>
+          <button onclick="addToCart('Alden Richards', 199, 'images/alden.jpeg')">Add to Cart</button>
+        </div>
       </div>
-      <div>
+
+      <div class="card">
         <img src="images/dubai choc.jpeg" alt="Dubai Choc">
-        <p><strong>Dubai Choc</strong></p>
-        <p>₱299</p>
-        <button>Add to Cart</button>
+        <div class="card-body">
+          <strong>Dubai Choc</strong>
+          <div class="price">₱299</div>
+          <button onclick="addToCart('Dubai Choc', 299, 'images/dubai choc.jpeg')">Add to Cart</button>
+        </div>
       </div>
-      <div>
+
+      <div class="card">
         <img src="images/master sprinkler.jpeg" alt="Master Sprinkler">
-        <p><strong>Master Sprinkler</strong></p>
-        <p>₱599</p>
-        <button>Add to Cart</button>
+        <div class="card-body">
+          <strong>Master Sprinkler</strong>
+          <div class="price">₱599</div>
+          <button onclick="addToCart('Master Sprinkler', 599, 'images/master sprinkler.jpeg')">Add to Cart</button>
+        </div>
       </div>
-      <div>
-        <img src="images/download.jpg" alt="Product ni ocampo">
-        <p><strong>Product 67</strong></p>
-        <p>₱67</p>
-        <button>Add to Cart</button>
+
+      <div class="card">
+        <img src="images/download.jpg" alt="Product 67">
+        <div class="card-body">
+          <strong>Product 67</strong>
+          <div class="price">₱67</div>
+          <button onclick="addToCart('Product 67', 67, 'images/download.jpg')">Add to Cart</button>
+        </div>
       </div>
-      <div>
-        <img src="images/gold chain.jpeg" alt="Product ni ocampo">
-        <p style="color: red;">✔On Sale</p>
-        <p><strong>💰Gold Chain</strong></p>
-        <p style="color: yellow;">₱999</p>
-        <button>Add to Cart</button>
+
+      <div class="card">
+        <img src="images/gold chain.jpeg" alt="Gold Chain">
+        <div class="card-body">
+          <strong>Gold Chain</strong>
+          <div class="price">₱999</div>
+          <button onclick="addToCart('Gold Chain', 999, 'images/gold chain.jpeg')">Add to Cart</button>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <hr>
+    <section id="categories" class="simple-section">
+      <h2>Categories</h2>
+      <div class="chips">
+        <span>Food</span>
+        <span>Clothing</span>
+        <span>Accessories</span>
+        <span>Home Essentials</span>
+      </div>
+    </section>
+  </main>
 
-  <!-- CATEGORIES -->
-  <section>
-    <h2>Categories</h2>
-    <ul>
-      <li><a href="#">Food</a></li>
-      <li><a href="#">Clothing</a></li>
-      <li><a href="#">Accessories</a></li>
-      <li><a href="#">Home Essentials</a></li>
-    </ul>
-  </section>
-
-  <hr>
-
-  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Ocamport | For school project only</p>
+    <footer>
+  &copy; 2025 Ocamport — School Project<br>
+  <span style="font-size:0.85rem; color:#66bb6a;">Developed by STEM 12-Lignite</span>
+</footer>
+
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
