@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ocamport — Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Ocamport</h1>
+    <nav>
+      <a href="index.html">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="invest.html">Invest</a>
+      <a href="profile.html" class="active">Profile</a>
+    </nav>
+  </header>
+
+  <section class="simple-section" id="profile-section">
+    <h2>My Profile</h2>
+
+    <!-- Profile Picture Section -->
+    <div id="profile-picture-container">
+      <img id="profilePreview" src="" alt="Profile Preview">
+      <input id="imageInput" type="file" accept="image/*" onchange="previewProfileImage(event)" style="display:none;">
+      <button id="uploadBtn" onclick="document.getElementById('imageInput').click()">Upload Photo</button>
+    </div>
+
+    <!-- Info Fields -->
+    <div class="profile-inputs">
+      <label>Full Name</label>
+      <input id="nameField" type="text" placeholder="Your name">
+
+      <label>Email</label>
+      <input id="emailField" type="email" placeholder="you@example.com">
+
+      <label>Bio</label>
+      <textarea id="bioField" rows="4" placeholder="Short bio"></textarea>
+    </div>
+
+    <div class="profile-actions">
+      <button onclick="saveProfile()">Save Profile</button>
+      <a href="business.html"><button>Manage Business</button></a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Ocamport — School Project
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

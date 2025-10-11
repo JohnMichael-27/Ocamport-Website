@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Profile | Ocamport</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Ocamport</h1>
+    <nav>
+      <a href="index.html">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="invest.html">Invest</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+
+  <section class="shop-profile">
+    <!-- Banner -->
+    <div class="shop-banner">
+      <img id="shopBannerPreview" src="" alt="Shop Banner">
+      <input type="file" id="shopBannerInput" accept="image/*" onchange="previewShopBanner(event)">
+    </div>
+
+    <!-- Logo + Info -->
+    <div class="shop-info">
+      <div class="shop-logo">
+        <img id="shopLogoPreview" src="" alt="Shop Logo">
+        <input type="file" id="shopLogoInput" accept="image/*" onchange="previewShopLogo(event)">
+      </div>
+
+      <div class="shop-details">
+        <input id="shopName" type="text" placeholder="Shop Name">
+        <textarea id="shopDesc" rows="3" placeholder="Describe your shop..."></textarea>
+        <button onclick="saveShopProfile()">Save Shop Profile</button>
+      </div>
+
+      <div class="shop-products">
+  <h2>Shop Products</h2>
+  <p class="shop-note">Your available items are displayed below. These boxes represent products your shop is selling.</p>
+
+  <div id="productGrid" class="product-grid">
+    <!-- JS will load products here -->
+  </div>
+
+  <button class="uploadBtn" onclick="addSampleProducts()">Add Products</button>
+</div>
+
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Ocamport — School Project
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

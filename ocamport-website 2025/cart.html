@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ocamport — Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img src="images/ocamport.jpg" alt="logo" class="logo">
+      <h1>Ocamport</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cart.html">Cart</a>
+      <a href="invest.html">Invest</a>
+      <a href="profile.html" class="cta">Profile</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="simple-section">
+      <h2>Your Cart</h2>
+      <div id="cartArea">
+        <!-- cart items -->
+      </div>
+
+      <div class="cart-actions">
+        <button onclick="clearCart()">Clear Cart</button>
+        <button onclick="checkout()">Checkout</button>
+        <a href="index.html"><button>Continue Shopping</button></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Ocamport — School project
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
