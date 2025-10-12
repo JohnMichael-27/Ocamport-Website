@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Ocamport — Contract</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="contract.css">
 </head>
 <body>
   <header>
@@ -17,38 +17,31 @@
     </nav>
   </header>
 
-  <section id="contractSection">
-    <section id="contractSection">
-  <h2>Investment Contract</h2>
+  <main>
+    <div class="contract-container">
+      <h2>Business Investment Agreement</h2>
+      <h3 id="contractTitle">No Contract Selected</h3>
 
-  <div id="contractBox" class="contract-box">
-    <h3 id="contractTitle">No Contract Selected</h3>
+      <div class="contract-text" id="contractText">
+        Select a business from the Invest page to view its contract details.
+      </div>
 
-    <!-- Scrollable contract text area -->
-    <div id="contractScroll" class="contract-scroll">
-      <p id="contractText">
-        Select a business from the Invest page to view its full contract.
-      </p>
+      <div class="contract-terms">
+        <h4>General Terms & Conditions</h4>
+        <ul>
+          <li>All investments are for demonstration purposes within Ocamport.</li>
+          <li>No real currency is involved; this simulates real-world investing.</li>
+          <li>Returns are based on the simulated business performance.</li>
+          <li>Investors must read and understand all terms before agreeing.</li>
+        </ul>
+      </div>
+
+      <div class="contract-actions">
+        <button onclick="agreeToContract()">Agree &amp; Invest</button>
+        <a href="invest.html"><button class="secondary">Back to Invest</button></a>
+      </div>
     </div>
-
-    <!-- Extra legal-style notes -->
-    <div class="contract-extra">
-      <h4>General Terms & Conditions</h4>
-      <ul>
-        <li>All investments are for demonstration purposes within Ocamport.</li>
-        <li>No real currency is involved; this simulates real-world investing.</li>
-        <li>Returns are based on the simulated business performance.</li>
-        <li>Investors must read and understand all terms before agreeing.</li>
-      </ul>
-    </div>
-
-    <div class="contract-actions">
-      <button onclick="agreeToContract()">Agree &amp; Invest</button>
-      <a href="invest.html"><button class="secondary">Back to Invest</button></a>
-    </div>
-  </div>
-</section>
-  </section>
+  </main>
 
   <footer>
     &copy; 2025 Ocamport — School Project

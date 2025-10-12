@@ -196,7 +196,7 @@ function renderBusinesses() {
   if (arr.length === 0) {
     // create defaults if none (only on first view)
     arr = [
-      { name: 'Cafe Verde', cat: 'Food', desc: 'Cozy coffee shop using local beans.', img: 'images/alden.jpeg', contract: 'Sample contract for Cafe Verde.' },
+      { name: 'Cafe Verde', cat: 'Food', desc: 'Cozy coffee shop using local beans.', img: 'images/Las-Cafe.jpg', contract: 'Sample contract for Cafe Verde.' },
       { name: 'TechLeaf Gadgets', cat: 'Electronics', desc: 'Affordable phone accessories.', img: 'images/download.jpg', contract: 'Sample contract for TechLeaf.' }
     ];
     saveBusinesses(arr);
@@ -227,7 +227,7 @@ function loadInvestPage() {
       {
         name: "Cafe Verde",
         desc: "Cozy local coffee shop offering premium drinks.",
-        img: "images/alden.jpeg",
+        img: "images/Las-Cafe.jpg",
         contract: "This contract outlines investment in Cafe Verde."
       },
       {
@@ -239,7 +239,7 @@ function loadInvestPage() {
       {
         name: "Golden Accessories",
         desc: "Trendy gold jewelry and lifestyle pieces.",
-        img: "images/gold chain.jpeg",
+        img: "images/Gold_Ingot_JE4_BE2.jpg",
         contract: "This contract outlines investment in Golden Accessories."
       }
     ];
@@ -295,14 +295,14 @@ function closeContract() {
   if (box) box.className = 'contract-box hidden';
 }
 
-/* === INVEST & CONTRACT helpers (paste at end of script.js) === */
+/* === INVEST & CONTRACT helpers === */
 
 /* ensures there's at least some businesses stored */
 function ensureBusinesses() {
   var arr = getBusinesses();
   if (!arr || arr.length === 0) {
     arr = [
-      { name: 'Cafe Verde', desc: 'Cozy local coffee shop offering premium drinks.', img: 'images/alden.jpeg', contract: 'Investment contract for Cafe Verde: revenue share 10%...' },
+      { name: 'Cafe Verde', desc: 'Cozy local coffee shop offering premium drinks.', img: 'images/Las-Cafe.jpg', contract: 'Investment contract for Cafe Verde: revenue share 10%...' },
       { name: 'TechLeaf Gadgets', desc: 'Affordable and reliable tech accessories.', img: 'images/download.jpg', contract: 'Investment contract for TechLeaf: equity share 5%...' },
       { name: 'Golden Accessories', desc: 'Trendy gold jewelry and lifestyle pieces.', img: 'images/gold chain.jpeg', contract: 'Investment contract for Golden Accessories: profit share 8%...' }
     ];
@@ -335,10 +335,10 @@ function addSampleProducts() {
   if (!area) return;
 
   const sampleProducts = [
-    { name: 'Iced Latte', price: 120, img: 'images/alden.jpeg' },
-    { name: 'Matcha Smoothie', price: 99, img: 'images/download.jpg' },
-    { name: 'Reusable Cup', price: 150, img: 'images/gold chain.jpeg' },
-    { name: 'Canvas Tote Bag', price: 180, img: 'images/download.jpg' }
+    { name: 'Iced Latte', price: 120, img: 'images/images.jpg' },
+    { name: 'Matcha Smoothie', price: 99, img: 'images/healthy-green-smoothie-with-matcha-tea-1200.jpg' },
+    { name: 'Reusable Cup', price: 150, img: 'images/images (3).jpg' },
+    { name: 'Canvas Tote Bag', price: 180, img: 'images/Tote-Canvas-Bag-MainImage.jpg' }
   ];
 
   let html = '';
@@ -359,14 +359,15 @@ function addSampleProducts() {
 /* called when user clicks View Contract; saves selected business and redirects */
 function viewContract(index) {
   var arr = getBusinesses();
-  if (!arr || !arr[index]) {
-    alert('Business not found.');
-    return;
-  }
-  localStorage.setItem('currentContract', JSON.stringify(arr[index]));
-  // make sure contract.html exists in same folder
-  window.location.href = 'contract.html';
+  if (!arr[index]) return;
+
+  // Save contract info temporarily in localStorage
+  localStorage.setItem("selectedContract", JSON.stringify(arr[index]));
+
+  // Redirect to the contract page
+  window.location.href = "contract.html";
 }
+
 
 /* load contract.html content from localStorage.currentContract */
 function loadContract() {
@@ -383,6 +384,36 @@ function loadContract() {
   }
 }
 
+function agreeToContract() {
+  const raw = localStorage.getItem('currentContract');
+  if (!raw) {
+    alert('No contract selected.');
+    return;
+  }
+
+  const biz = JSON.parse(raw);
+
+  // Create signature area dynamically
+  const box = document.getElementById('contractBox');
+  let signature = document.getElementById('signatureArea');
+
+  if (!signature) {
+    signature = document.createElement('div');
+    signature.id = 'signatureArea';
+    signature.innerHTML = `
+      <h4 style="margin-top:15px; color:#2ecc40;">Investor Confirmation</h4>
+      <p style="margin-bottom:8px;">Sign below to confirm your agreement:</p>
+      <input type="text" placeholder="Investor Name" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ccc;margin-bottom:8px;">
+      <input type="date" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ccc;">
+      <p style="font-size:0.9rem;margin-top:10px;">By signing, you acknowledge that this investment is part of the Ocamport school simulation project.</p>
+    `;
+    box.appendChild(signature);
+  } else {
+    alert(`You have already agreed to invest in "${biz.name}".`);
+  }
+}
+
+
 /* Unified DOMContentLoaded loader — safer than overwriting window.onload */
 document.addEventListener('DOMContentLoaded', function () {
   try { if (document.getElementById('investArea')) loadInvestPage(); } catch(e){ console.error(e); }
@@ -394,3 +425,20 @@ document.addEventListener('DOMContentLoaded', function () {
   try { if (document.getElementById('business-section')) { loadBusiness(); loadBusinessImage(); } } catch(e){ /* ignore */ }
   try { if (document.getElementById('shopProfile')) loadShopProfile(); } catch(e){ /* ignore */ }
 });
+
+function loadContractPage() {
+  var data = localStorage.getItem("selectedContract");
+  if (!data) return;
+
+  try {
+    var contract = JSON.parse(data);
+    document.getElementById("contractTitle").textContent = contract.name + " — Contract";
+    document.getElementById("contractText").textContent =
+      contract.contract || "No contract available.";
+  } catch (e) {
+    console.error("Error loading contract:", e);
+  }
+}
+
+// Run when the contract page loads
+window.addEventListener("DOMContentLoaded", loadContractPage);
