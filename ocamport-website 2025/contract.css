@@ -147,3 +147,51 @@ footer {
     transform: translateY(0);
   }
 }
+
+/* ==== BUSINESS STATS SECTION ==== */
+.business-stats {
+  margin: 50px auto 80px;
+  max-width: 850px;
+  text-align: center;
+}
+
+.business-stats h2 {
+  color: #2ecc40;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.stat-box {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 20px 10px;
+  width: 100%;
+  max-width: 200px;
+  transition: 0.2s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box h3 {
+  color: #2ecc40;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.stat-box p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+}
+
