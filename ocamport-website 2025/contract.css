@@ -195,3 +195,56 @@ footer {
   color: #333;
 }
 
+/* === UNIFIED ARELLANISTA MARKET HEADER === */
+.market-header {
+  background: linear-gradient(180deg, #2ecc40 0%, #27ae60 100%);
+  color: white;
+  text-align: center;
+  padding: 25px 10px 18px;
+  border-bottom: 4px solid #1e8449;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid white;
+}
+
+.market-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.market-subtitle {
+  font-size: 1.5rem;      /* slightly smaller than Arellanista */
+  font-weight: 600;       /* still bold but softer */
+  margin: 5px 0 15px;
+  opacity: 0.95;
+  letter-spacing: 0.3px;
+}
+
+nav {
+  margin-top: 5px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 15px;
+  transition: opacity 0.2s;
+}
+
+nav a:hover {
+  opacity: 0.8;
+}
+
